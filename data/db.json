@@ -1,0 +1,75 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Iphone 14 Pro",
+      "price": 1199.99,
+      "guarantee": "2 years",
+      "description": "Iphone 14 Pro is the latest flagship smartphone from Apple, featuring a stunning design, powerful performance, and advanced camera capabilities. With its A16 Bionic chip, it delivers lightning-fast speed and efficiency. The ProMotion display offers a smooth and immersive viewing experience, while the improved battery life ensures you can stay connected all day long. Capture stunning photos and videos with the advanced camera system, which includes Night mode, Deep Fusion, and Smart HDR 4. Experience the future of mobile technology with the iPhone 14 Pro.",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTMxcTcZ80kwz7HU9tbHE5z-NWAbQhXrMyvUkYFG7BsCQvll-DZIYTCYPfg5ffgxY5KGsaJVxMi0tneb6miwV5sOFk4iO20h2HX1TLglMbc7CCGt-8j43Dx6JUh3fQeGrDTue7kVggQuQ&usqp=CAc",
+      "category": "Electronics",
+      "storage": "128GB"
+    },
+    {
+      "id": "2",
+      "name": "Samsung Galaxy S23 Ultra",
+      "price": 999.99,
+      "guarantee": "3 years",
+      "description": "The Samsung Galaxy S23 Ultra is a high-end smartphone that offers a premium experience with its sleek design and powerful features. It boasts a large, vibrant display that provides an immersive viewing experience, making it perfect for gaming and multimedia consumption. The device is equipped with a top-of-the-line processor that ensures smooth performance and efficient multitasking. The camera system on the Galaxy S23 Ultra is exceptional, allowing users to capture stunning photos and videos with ease. With its long-lasting battery life and advanced connectivity options, the Samsung Galaxy S23 Ultra is a great choice for those seeking a top-tier smartphone.",
+      "image": "https://www.zurusten.com/image/cache/catalog/products_2023/samsung-s23-ultra-green-1-1100x1100.png",
+      "category": "Electronics",
+      "storage": "256GB"
+    },
+    {
+      "id": "3",
+      "name": "Google Pixel 7 Pro",
+      "price": 899.99,
+      "guarantee": "1.5 years",
+      "description": "The Google Pixel 7 Pro is a cutting-edge smartphone that combines innovative features with a sleek design. It features a stunning OLED display that provides vibrant colors and deep blacks, making it perfect for watching videos and playing games. The device is powered by the latest Snapdragon processor, ensuring smooth performance and efficient multitasking. The camera system on the Pixel 7 Pro is exceptional, allowing users to capture stunning photos and videos with ease. With its long-lasting battery life and advanced connectivity options, the Google Pixel 7 Pro is a great choice for those seeking a top-tier smartphone.",
+      "image": "https://images.sparhandy.de/assets/ea0a2bd1058913b7f5e4863007c4f30b3de9e337b41d5c48cb3055aa4b785be8/image_global_P10P_2025Q3_BRTQ_FLTQ_Moonstone_Wallpaper_LT_T-Shot_SIMP.png?tr=w-640,cm-pad_resize",
+      "category": "Electronics",
+      "storage": "128GB"
+    },
+    {
+      "id": "4",
+      "name": "OnePlus 11 Pro",
+      "price": 799.99,
+      "guarantee": "2.5 years",
+      "description": "The OnePlus 11 Pro is a high-end smartphone that offers a premium experience with its sleek design and powerful features. It boasts a large, vibrant display that provides an immersive viewing experience, making it perfect for gaming and multimedia consumption. The device is equipped with a top-of-the-line processor that ensures smooth performance and efficient multitasking. The camera system on the OnePlus 11 Pro is exceptional, allowing users to capture stunning photos and videos with ease. With its long-lasting battery life and advanced connectivity options, the OnePlus 11 Pro is a great choice for those seeking a top-tier smartphone.",
+      "image": "https://i.otto.de/i/otto/41cfa187-a054-5a50-8242-61d4d788b2b0?h=1040&w=1102&sm=clamp&upscale=true&fmt=auto&qlt=40&unsharp=0,1,0.6,7",
+      "category": "Electronics",
+      "storage": "256GB"
+    },
+    {
+      "id": "5",
+      "name": "Sony Xperia 1 III",
+      "price": 1099.99,
+      "guarantee": "1 years",
+      "description": "Sony Xperia 1 III is a flagship smartphone that offers a premium experience with its sleek design and powerful features. It boasts a large, vibrant display that provides an immersive viewing experience, making it perfect for gaming and multimedia consumption. The device is equipped with a top-of-the-line processor that ensures smooth performance and efficient multitasking. The camera system on the Xperia 1 III is exceptional, allowing users to capture stunning photos and videos with ease. With its long-lasting battery life and advanced connectivity options, the Sony Xperia 1 III is a great choice for those seeking a top-tier smartphone.",
+      "image": "https://sony.scene7.com/is/image/sonyglobalsolutions/Product-Intro-Plate-3_M-3?$productIntroPlatemobile$&fmt=png-alpha",
+      "category": "Electronics",
+      "storage": "128GB"
+    },
+    {
+      "id": "6",
+      "name": "Xiaomi Mi 11 Ultra",
+      "price": 899.99,
+      "guarantee": "2 years",
+      "description": "The Xiaomi Mi 11 Ultra is a high-end smartphone that offers a premium experience with its sleek design and powerful features. It boasts a large, vibrant display that provides an immersive viewing experience, making it perfect for gaming and multimedia consumption. The device is equipped with a top-of-the-line processor that ensures smooth performance and efficient multitasking. The camera system on the Mi 11 Ultra is exceptional, allowing users to capture stunning photos and videos with ease. With its long-lasting battery life and advanced connectivity options, the Xiaomi Mi 11 Ultra is a great choice for those seeking a top-tier smartphone.",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRmU9clik9esug0A8IrbtMt7KX4AyDv5U5yjKqYeHmCcV-VunSLk3L6K1zZTFoRcF7GDIuEmh-RfLP7eEw1tbW-4pLxXMAsDY_vvE3wOF7phRr049qm1byKGIkGsIq7Vq22q0Iw-LxLoUg&usqp=CAc",
+      "category": "Electronics",
+      "storage": "256GB"
+    },
+    {
+      "id": "MGvs7WYJkYE",
+      "name": "XIAOMI Redmi 15C",
+      "price": "125.4",
+      "category": "Electronic",
+      "storage": "128 GB",
+      "image": "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_159804380?x=536&y=402&format=jpg&quality=80&sp=yes&strip=yes&trim&ex=536&ey=402&align=center&resizesource&unsharp=1.5x1+0.7+0.02&cox=0&coy=0&cdx=536&cdy=402",
+      "description": "Saturn wählt für Dich das beste Angebot aus, indem Erscheinungsbild, Preis, technischer Zustand, Zubehör und Verkäuferbewertung berücksichtigt werden. Von MediaMarkt & Saturn angebotene Produkte können bei anderen Verkäufern zu einem günstigeren Preis erhältlich sein.",
+      "guarantee": "2.5 years"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

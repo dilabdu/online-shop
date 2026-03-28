@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+.active {
+  color: blue;
+  text-decoration: underline;
+}
+
+html,
+body {
+  @apply min-h-screen;
+}
+
+#root {
+  @apply min-h-screen flex flex-col;
+}
+
+main {
+  @apply grow;
+}
+
+.align-content {
+  @apply mx-auto px-5 max-w-5xl;
+}
+
+li {
+  @apply list-none;
+}
