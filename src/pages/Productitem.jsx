@@ -12,15 +12,15 @@ function Productitem() {
         <>
           <div className="card bg-base-100 w-96 shadow-sm align-content">
             <div className="flex justify-between mt-5">
-              <span className="font-medium">Price:{product.price} €</span>
+              <span className="font-medium">Price: {product.price} €</span>
               <span className="flex justify-center items-center">
                 <FaCheckCircle className="m-1.5" />
-                {product.guarantee}
+                {product.guarantee} years
               </span>
             </div>
             <div className="flex justify-between">
               <span>Category: {product.category}</span>
-              <span> Storage: {product.storage}</span>
+              <span> Storage: {product.storage} GB</span>
             </div>
             <figure className="px-10 pt-10">
               <img

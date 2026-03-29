@@ -1,25 +1,26 @@
-import { collection, onSnapshot, QuerySnapshot } from "firebase/firestore";
+import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../firebase/config";
 
-export const useCollection = (collectionName) => {
+export const useCollection = (collectionName, filterOption = "asc") => {
   const [data, setData] = useState(null);
   useEffect(() => {
-    const unsubscribe = onSnapshot(
+    const q = query(
       collection(db, collectionName),
-      (snapshot) => {
-        const dat = [];
-        QuerySnapshot.docs.forEach((doc) =>
-          data.push({
-            id: doc.id,
-            ...doc.data(),
-          }),
-        );
-        setData(data);
-      },
+      orderBy("createdTime", filterOption),
     );
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      const data = [];
+      snapshot.docs.forEach((doc) =>
+        data.push({
+          id: doc.id,
+          ...doc.data(),
+        }),
+      );
+      setData(data);
+    });
 
     return () => unsubscribe();
-  }, [collectionName]);
+  }, [collectionName, filterOption]);
   return { data };
 };

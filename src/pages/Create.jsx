@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
-import { doc, setDoc } from "firebase/firestore";
+import { useFirestore } from "../hooks/useFirestore";
 
 function Create() {
   const navigate = useNavigate();
-  const [isPending, setIsPending] = useState(false);
+
+  const { addDocument, isPending } = useFirestore("products");
   const [name, setName] = useState("");
   const [guarantee, setGuarantee] = useState("");
   const [price, setPrice] = useState("");
@@ -18,8 +19,8 @@ function Create() {
     e.preventDefault();
 
     const id = uuidv4();
-    setIsPending(true);
-    await setDoc(doc(db, "products", id), {
+
+    await addDocument(null, {
       name,
       price,
       category,
@@ -27,9 +28,9 @@ function Create() {
       image,
       description,
       guarantee,
+    }).then(() => {
+      navigate("/");
     });
-    setIsPending(false);
-    navigate("/");
   };
 
   return (
@@ -45,7 +46,7 @@ function Create() {
               type="text"
               required
               className="input w-full"
-              placeholder="write a Product Name"
+              placeholder="write a product name"
             />
           </label>
           <label className="flex flex-col gap-1 mb-5">
@@ -56,7 +57,7 @@ function Create() {
               type="text"
               required
               className="input w-full"
-              placeholder="write a Product Category"
+              placeholder="write a product category"
             />
           </label>
           <label className="flex flex-col gap-1 mb-5">
@@ -67,7 +68,7 @@ function Create() {
               type="number"
               required
               className="input w-full"
-              placeholder="write a Product Price"
+              placeholder="write a product price"
             />
           </label>
           <label className="flex flex-col gap-1 mb-5">
@@ -78,7 +79,7 @@ function Create() {
               type="text"
               required
               className="input w-full"
-              placeholder="write a Product Guarantee"
+              placeholder="write a product guarantee"
             />
           </label>
           <label className="flex flex-col gap-1 mb-5">
@@ -89,7 +90,7 @@ function Create() {
               type="text"
               required
               className="input w-full"
-              placeholder="write a Product Name"
+              placeholder="write a product storage"
             />
           </label>
           <label className="flex flex-col gap-1 mb-5">
@@ -100,7 +101,7 @@ function Create() {
               type="URL"
               required
               className="input w-full"
-              placeholder="write a Product URL"
+              placeholder="write a product URL"
             />
           </label>
           <label className="flex flex-col gap-1 mb-5">
@@ -111,12 +112,14 @@ function Create() {
               value={description}
               required
               className="input w-full"
-              placeholder="write a Product Name"
+              placeholder="write a product description"
             />
           </label>
-          <button type="submit" className="btn btn-primary w-full">
-            Create Product
-          </button>
+          {!isPending && (
+            <button type="submit" className="btn btn-primary w-full">
+              Create Product
+            </button>
+          )}
           {isPending && (
             <button type="submit" disabled className="btn btn-primary w-full">
               Create Product
