@@ -6,6 +6,7 @@ import {
   addDoc,
   deleteDoc,
   serverTimestamp,
+  updateDoc,
 } from "firebase/firestore";
 import { toast } from "sonner";
 import { useState } from "react";
@@ -24,7 +25,10 @@ export const useFirestore = (collectionName) => {
       setIsPending(false);
     }
   };
-  const updateDocument = (id, data) => {};
+  const updateDocument = async (id, data) => {
+    const updateDocument = doc(db, collectionName, id);
+    await updateDoc(updateDocument, data);
+  };
   const addDocument = async (id = null, data) => {
     const newDocument = { ...data, createdTime: serverTimestamp() };
     if (id) {

@@ -2,11 +2,10 @@ import { signOut } from "firebase/auth";
 import { useState } from "react";
 import { toast } from "sonner";
 import { auth } from "../firebase/config";
-import { useContext } from "react";
-import { GlobalContext } from "../context/GlobalContext";
+import { useGlobalContext } from "./useGlobal.context";
 
 export function useLogOut() {
-  const { dispatch } = useContext(GlobalContext);
+  const { dispatch } = useGlobalContext;
   const [isPending, setIsPending] = useState(false);
 
   const _logout = async () => {

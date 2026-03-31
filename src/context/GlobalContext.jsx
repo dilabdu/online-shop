@@ -11,8 +11,6 @@ const changeState = (state, action) => {
       return { ...state, user: null };
     case "authReady":
       return { ...state, authReady: true };
-    case "logout":
-      return { ...state, user: false };
     default:
       return state;
   }

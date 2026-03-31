@@ -1,6 +1,9 @@
 import { FaCheckCircle } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import { useDocument } from "../hooks/useDocument";
+import NoComments from "../components/NoComments";
+import Comments from "../components/Comments";
+import AddComment from "../components/AddComment";
 
 function Productitem() {
   const { id } = useParams();
@@ -39,6 +42,9 @@ function Productitem() {
           </div>
         </>
       )}
+      <NoComments product={product} />
+      <Comments product={product} />
+      <AddComment product={product} />
     </div>
   );
 }

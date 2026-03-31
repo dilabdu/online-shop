@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLogin } from "../hooks/useLogin";
+import { FcGoogle } from "react-icons/fc";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { isPending, loginWithEmail } = useLogin();
+  const { isPending, loginWithEmail, loginWithGoogle } = useLogin();
   const handleSubmit = (e) => {
     e.preventDefault();
     loginWithEmail(email, password);
@@ -54,6 +55,17 @@ function Login() {
               <Link to="/register">Register</Link>
             </span>
           </p>
+          <p className="text-center py-4">Or continue with</p>
+
+          <div className="flex justify-center w-full mt-5">
+            <button
+              onClick={loginWithGoogle}
+              className="btn btn-outline"
+              type="button"
+            >
+              <FcGoogle className="text-3xl" />
+            </button>
+          </div>
         </form>
       </section>
     </main>

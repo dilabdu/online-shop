@@ -17,13 +17,13 @@ import "./App.css";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import RegisterLayout from "./layout/RegisterLayout";
-import { useContext, useEffect } from "react";
-import { GlobalContext } from "./context/GlobalContext";
+import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/config";
+import { useGlobalContext } from "./hooks/useGlobal.context";
 
 function App() {
-  const { user, dispatch, authReady } = useContext(GlobalContext);
+  const { user, dispatch, authReady } = useGlobalContext();
   const routes = createBrowserRouter([
     {
       path: "/",

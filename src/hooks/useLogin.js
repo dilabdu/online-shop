@@ -1,11 +1,14 @@
 import { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { useContext } from "react";
-import { GlobalContext } from "../context/GlobalContext";
+import {
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+} from "firebase/auth";
+import { useGlobalContext } from "./useGlobal.context";
 import { auth } from "../firebase/config";
 
 export const useLogin = () => {
-  const { dispatch } = useContext(GlobalContext);
+  const { dispatch } = useGlobalContext();
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const loginWithEmail = async (email, password) => {
@@ -23,6 +26,25 @@ export const useLogin = () => {
       setIsPending(false);
     }
   };
+  const loginWithGoogle = async () => {
+    const provider = new GoogleAuthProvider();
 
-  return { data, isPending, loginWithEmail };
+    try {
+      setIsPending(true);
+      const req = await signInWithPopup(auth, provider);
+
+      if (!req.user) {
+        throw new Error("Could not complete registration");
+      }
+      const user = req.user;
+
+      dispatch({ type: "login", payload: user });
+    } catch (error) {
+      console.log(error.message);
+    } finally {
+      setIsPending(false);
+    }
+  };
+
+  return { data, isPending, loginWithEmail, loginWithGoogle };
 };

@@ -1,11 +1,13 @@
-import { useContext, useState } from "react";
-import { GlobalContext } from "../context/GlobalContext";
+import { useState } from "react";
 import { auth } from "../firebase/config";
 import { updateProfile } from "firebase/auth";
 import { toast } from "sonner";
+import { useGlobalContext } from "../hooks/useGlobal.context";
+import { useNavigate } from "react-router-dom";
 
 function Profile() {
-  const { user, dispatch } = useContext(GlobalContext);
+  const navigate = useNavigate();
+  const { user, dispatch } = useGlobalContext();
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const handleSubmit = async (e) => {
@@ -13,6 +15,8 @@ function Profile() {
     await updateProfile(auth.currentUser, {
       photoURL: image,
       displayName: name,
+    }).then(() => {
+      navigate("/");
     });
     dispatch({
       type: "login",

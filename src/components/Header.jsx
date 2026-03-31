@@ -1,11 +1,10 @@
 import { NavLink, Link } from "react-router-dom";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import { useLogOut } from "../hooks/useLogOut";
-import { useContext } from "react";
-import { GlobalContext } from "../context/GlobalContext";
+import { useGlobalContext } from "../hooks/useGlobal.context";
 
 function Header() {
-  const { user } = useContext(GlobalContext);
+  const { user } = useGlobalContext();
   const { isPending, _logout } = useLogOut();
   return (
     <div className="bg-base-300">

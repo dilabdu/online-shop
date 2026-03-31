@@ -1,22 +1,33 @@
 import { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useContext } from "react";
-import { GlobalContext } from "../context/GlobalContext";
+import {
+  createUserWithEmailAndPassword,
+  updateProfile,
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+} from "firebase/auth";
 import { auth } from "../firebase/config";
+import { useGlobalContext } from "./useGlobal.context";
 
 export const useRegister = () => {
-  const { dispatch } = useContext(GlobalContext);
+  const { dispatch } = useGlobalContext;
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(false);
-  const registerWithEmail = async (displayName, email, password) => {
+
+  // register with email and password
+  const registerWithEmail = async (displayName, photo, email, password) => {
     try {
       setIsPending(true);
       const req = await createUserWithEmailAndPassword(auth, email, password);
-      console.log(auth);
+
       if (!req.user) {
         throw new Error("Could not complete registration");
       }
       const user = req.user;
+      await updateProfile(auth.currentUser, {
+        photoURL: photo,
+        displayName,
+      });
       dispatch({ type: "login", payload: user });
     } catch (error) {
       console.log(error.message);
@@ -25,5 +36,26 @@ export const useRegister = () => {
     }
   };
 
-  return { data, isPending, registerWithEmail };
+  // register with Google account
+  const registerWithGoogle = async () => {
+    const provider = new GoogleAuthProvider();
+
+    try {
+      setIsPending(true);
+      const req = await signInWithPopup(auth, provider);
+
+      if (!req.user) {
+        throw new Error("Could not complete registration");
+      }
+      const user = req.user;
+
+      dispatch({ type: "login", payload: user });
+    } catch (error) {
+      console.log(error.message);
+    } finally {
+      setIsPending(false);
+    }
+  };
+
+  return { data, isPending, registerWithEmail, registerWithGoogle };
 };
