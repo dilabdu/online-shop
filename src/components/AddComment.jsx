@@ -1,24 +1,24 @@
 import { useState } from "react";
 import { useFirestore } from "../hooks/useFirestore";
-import { auth } from "../firebase/config";
 import { v4 as uuidv4 } from "uuid";
+import { useGlobalContext } from "../hooks/useGlobal.context";
 
 function AddComment({ product }) {
   const [comment, setComment] = useState("");
-
+  const { user } = useGlobalContext();
   const { updateDocument } = useFirestore("products");
   const handleSubmit = (e) => {
     e.preventDefault();
 
     updateDocument(product.id, {
       comments: [
-        ...(product.comments || []),
+        ...product.comments,
         {
           text: comment,
           author: {
-            name: author.displayName,
-            uid: author.uid,
-            photoURL: author.photoURL,
+            name: user.displayName,
+            uid: user.uid,
+            photoURL: user.photoURL,
           },
           createdAt: new Date().getTime(),
           id: uuidv4(),
