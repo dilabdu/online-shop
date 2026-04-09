@@ -31,6 +31,7 @@ function AddComment({ product }) {
     <div>
       <h3>Add Comment:</h3>
       <form onSubmit={handleSubmit}>
+        {/* this is my Comment */}
         <textarea
           className="textarea w-full resize-none"
           placeholder="Write your comment here..."
