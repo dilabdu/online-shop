@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
 import { useFirestore } from "../hooks/useFirestore";
 import { auth } from "../firebase/config";
@@ -18,7 +16,6 @@ function Create() {
     const form = e.target;
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
-    const id = uuidv4();
 
     await addDocument(null, {
       ...data,
@@ -69,7 +66,7 @@ function Create() {
             label="Image Url:"
             type="url"
             placeholder="write a product image Url"
-            name="image url"
+            name="image"
           />
           {/* Description */}
           <TextArea
